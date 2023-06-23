@@ -175,17 +175,31 @@ const LoginPagePage = () => {
                 >
                   {page === 'Login' ? 'Sign in' : 'Sign up'}
                 </button>
-                <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  Don’t have an account yet?{' '}
-                  <button
-                    className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                    onClick={() =>
-                      page === 'Login' ? toRegisterPage() : toLoginPage()
-                    }
-                  >
-                    {page === 'Login' ? 'Sign up' : 'Sign in'}
-                  </button>
-                </p>
+                {page === 'Login' ? (
+                  <>
+                    <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                      Don’t have an account yet?{' '}
+                      <button
+                        className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                        onClick={() => toRegisterPage()}
+                      >
+                        Sign up
+                      </button>
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                      Have an account?{' '}
+                      <button
+                        className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                        onClick={() => toLoginPage()}
+                      >
+                        Sign in
+                      </button>
+                    </p>
+                  </>
+                )}
               </form>
             </div>
           </div>
